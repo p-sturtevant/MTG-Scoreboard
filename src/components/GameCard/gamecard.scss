@@ -1,0 +1,43 @@
+.card {
+  border: 1px solid black;
+  padding: 20px;
+  width: 400px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: gray;
+  margin: -20px;
+  padding: 1rem 1rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.commander {
+  font-size: 24px;
+  margin: 0;
+}
+
+.life-total {
+  font-size: 16px;
+  margin: 0;
+}
+
+.win-condition,
+.player-learning {
+  margin-top: 20px;
+}
+
+.win-condition h3,
+.player-learning h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.win-condition p,
+.player-learning p {
+  font-size: 14px;
+  margin-top: 5px;
+}
