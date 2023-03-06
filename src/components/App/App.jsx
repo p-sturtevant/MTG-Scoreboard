@@ -6,6 +6,7 @@ function App() {
   const [count2, setCount2] = useState(0);
   const [name1, setName1] = useState("Matt");
   const [name2, setName2] = useState("Parker");
+
   return (
     <div className="App">
       <div className="main-content">
