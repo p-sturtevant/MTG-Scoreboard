@@ -4,8 +4,8 @@ import GameCard from "../GameCard/GameCard";
 const GameCardList = ({ games }) => {
   return (
     <div className="list">
-      {games.map((game) => {
-        return <GameCard game={game} />;
+      {games.map((game, index) => {
+        return <GameCard key={index} game={game} />;
       })}
     </div>
   );
