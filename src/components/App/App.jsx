@@ -8,21 +8,21 @@ function App() {
     games: [
       {
         lifeTotal: "20-0",
-        colors: "Boros",
+        colors: "Blue",
         commander: "Winota",
         winCon:
           "I was able to pull off 3 winota triggers, and got an extra combat phase as well",
       },
       {
         lifeTotal: "20-0",
-        colors: "Boros",
+        colors: "Red",
         commander: "Winota",
         winCon:
           "I was able to pull off 3 winota triggers, and got an extra combat phase as well",
       },
       {
         lifeTotal: "20-0",
-        colors: "Boros",
+        colors: "Black",
         commander: "Winota",
         winCon:
           "I was able to pull off 3 winota triggers, and got an extra combat phase as well",

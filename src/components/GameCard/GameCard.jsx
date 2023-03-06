@@ -19,44 +19,20 @@ const GameCard = ({ game }) => {
     simic: { primary: "#006FE6", secondary: "#05800B" },
   };
 
-  const determineColor = (deckColors) => {
-    let headers = document.querySelectorAll(".header");
-    headers.forEach((header) => {
-      switch (deckColors) {
-        case "Red":
-          header.style.backgroundColor = COLORS.red.primary;
-          header.style.color = "white";
-          break;
-        case "Blue":
-          header.style.backgroundColor = COLORS.blue.primary;
-          header.style.color = "white";
-          break;
-        case "Black":
-          header.style.backgroundColor = COLORS.black.primary;
-          header.style.color = "white";
-          break;
-        case "White":
-          header.style.backgroundColor = COLORS.white.primary;
-          header.style.color = "black";
-          break;
-        case "Green":
-          header.style.backgroundColor = COLORS.green.primary;
-          header.style.color = "white";
-          break;
-        case "Boros":
-          header.style.background = `radial-gradient(ellipse at top, #e66465, transparent), radial-gradient(ellipse at bottom, #4d9f0c, transparent);`;
-          header.style.color = "white";
-          break;
-      }
-    });
-  };
+  // const determineColor = (deckColors) => {
+  //   let header = document.querySelector(".header");
+  //   header.style.backgroundColor = COLORS[deckColors].primary;
+  // };
 
-  useEffect(() => {
-    determineColor(game.colors);
-  }, [game.colors]);
+  // useEffect(() => {
+  //   determineColor(game.colors.toLowerCase());
+  // }, [game.colors]);
   return (
     <div className="card">
-      <div className="header">
+      <div
+        className="header"
+        style={{ backgroundColor: COLORS[game.colors.toLowerCase()].primary }}
+      >
         <h2 className="commander">{game.commander}</h2>
         <p className="life-total">{game.lifeTotal}</p>
       </div>
