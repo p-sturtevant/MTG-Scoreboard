@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Column from "../Column/Column";
+import Form from "../Form/Form";
 function App() {
   const host = {
     name: "Parker",
@@ -7,7 +8,7 @@ function App() {
     games: [
       {
         lifeTotal: "20-0",
-        colors: "Simic",
+        colors: "Green",
         commander: "Winota",
         winCon:
           "I was able to pull off 3 winota triggers, and got an extra combat phase as well",
@@ -79,9 +80,9 @@ function App() {
     <div className="App">
       <div className="w-11/12 my-5 mx-auto flex justify-center">
         <Column player={host} />
-
         <Column player={opponent} />
       </div>
+      <Form />
     </div>
   );
 }

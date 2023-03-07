@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./gamecard.scss";
+
 const GameCard = ({ game }) => {
   const COLORS = {
     red: { primary: "#B30006" },
@@ -15,10 +15,11 @@ const GameCard = ({ game }) => {
     orzhov: { primary: "#FFF9DE", secondary: "#2B2B2A" },
     izzet: { primary: "#B30006", secondary: "#2B2B2A" },
     golgari: { primary: "#FFF9DE", secondary: "#006FE6" },
-    boros: { primary: "#B30006", secondary: "#FFF9DE" },
+    boros: {
+      primary: "linear-gradient(45deg, #B30006, #FFF9DE)",
+    },
     simic: {
       primary: "linear-gradient(45deg, #006FE6, #05800B)",
-      secondary: "#05800B",
     },
   };
 
