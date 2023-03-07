@@ -8,7 +8,7 @@ function App() {
     games: [
       {
         lifeTotal: "20-0",
-        colors: "Green",
+        colors: "Golgari",
         commander: "Winota",
         winCon:
           "I was able to pull off 3 winota triggers, and got an extra combat phase as well",

@@ -41,7 +41,7 @@ const Form = () => {
             name="message"
             placeholder="What was the win conditon?"
             rows="3"
-            className="textarea textarea-bordered mb-5 max-w-md"
+            className="textarea textarea-bordered max-w-md"
           />
           <textarea
             name="message"
