@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Column from "../Column/Column";
-import "./app.scss";
 function App() {
   const host = {
     name: "Parker",
@@ -78,8 +77,9 @@ function App() {
 
   return (
     <div className="App">
-      <div className="main-content">
+      <div className="w-11/12 my-5 mx-auto flex justify-center">
         <Column player={host} />
+
         <Column player={opponent} />
       </div>
     </div>

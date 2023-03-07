@@ -31,23 +31,21 @@ const GameCard = ({ game }) => {
   //   determineColor(game.colors.toLowerCase());
   // }, [game.colors]);
   return (
-    <div className="card">
+    <div className="card w-96 bg-base-100 shadow-xl font-poppins">
       <div
-        className="header"
+        className="flex justify-between p-4 text-white rounded-tr-xl rounded-tl-xl"
         style={{ background: COLORS[game.colors.toLowerCase()].primary }}
       >
-        <h2 className="commander">{game.commander}</h2>
-        <p className="life-total">{game.lifeTotal}</p>
+        <h2 className="card-title">{game.commander}</h2>
+        <p className="badge badge-lg badge-ghost">{game.lifeTotal}</p>
       </div>
-      <div className="card-content">
-        <div className="win-condition">
-          <h3>Win Condition</h3>
-          <p>{game.winCon}</p>
-        </div>
-        <div className="player-learning">
-          <h3>Player Learning</h3>
-          <p>A short blurb about what the player learned.</p>
-        </div>
+      <div className="card-body">
+        <h3 className="text-lg ">Win Condition</h3>
+        <p className="font-inter">{game.winCon}</p>
+        <h3 className="text-lg mt-2">Player Learning</h3>
+        <p className="font-inter">
+          A short blurb about what the player learned.
+        </p>
       </div>
     </div>
   );
