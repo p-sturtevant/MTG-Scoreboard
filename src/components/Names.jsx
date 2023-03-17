@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import GameCardList from "../GameCardList/GameCardList";
+import GameCardList from "./GameCardList";
 const Names = ({ name, score }) => {
   return (
     <>

@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from "react";
-import Column from "../Column/Column";
-import Form from "../Form/Form";
+import React, { useEffect, useMemo, useState } from "react";
+import Auth from "./Auth";
+import Column from "./Column";
+import Form from "./Form";
+import { supabase } from "../supabaseClient";
+import Account from "./Account";
 function App() {
   const host = {
     name: "Parker",
@@ -71,18 +74,32 @@ function App() {
     ],
   };
 
-  const [count1, setCount1] = useState(host.score);
-  const [count2, setCount2] = useState(opponent.score);
-  const [name1, setName1] = useState(host.name);
-  const [name2, setName2] = useState(opponent.name);
+  const [session, setSession] = useState(null);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+  }, []);
 
   return (
     <div className="App">
-      <div className="w-11/12 my-5 mx-auto flex justify-center">
-        <Column player={host} />
-        <Column player={opponent} />
-      </div>
-      <Form />
+      {!session ? (
+        <Auth />
+      ) : (
+        <>
+          <div className="w-11/12 my-5 mx-auto flex justify-center">
+            <Column player={host} />
+            <Column player={opponent} />
+          </div>
+          <Form />
+          <Account key={session.user.id} session={session} />
+        </>
+      )}
     </div>
   );
 }

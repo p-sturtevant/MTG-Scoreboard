@@ -1,6 +1,6 @@
 import React from "react";
 
-import GameCard from "../GameCard/GameCard";
+import GameCard from "./GameCard";
 const GameCardList = ({ games }) => {
   return (
     <div className="mt-5 flex flex-col gap-10 ">

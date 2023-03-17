@@ -1,25 +1,54 @@
-import React from "react";
+import React, { useRef, useMemo } from "react";
 
 const Form = () => {
+  const victor = useRef();
+  const commander = useRef();
+  const colors = useRef();
+  const winCon = useRef();
+  const lessons = useRef();
+
+  const formHandler = (event) => {
+    event.preventDefault();
+
+    const formData = {
+      victor: victor.current?.value,
+      commander: commander.current?.value,
+      colors: colors.current?.value,
+      winCon: winCon.current?.value,
+      lessons: lessons.current?.value,
+    };
+
+    console.log(formData);
+  };
+
   return (
     <div className="flex flex-col mb-10 mt-20 mx-auto">
       <div className="flex justify-center items-center">
-        <div className="flex flex-col gap-5 w-7/12 form-control">
+        <form className="flex flex-col gap-5 w-7/12" onSubmit={formHandler}>
           <h2 className="text-3xl">Add Game</h2>
           <input
+            ref={victor}
             type="text"
             name="victor"
             placeholder="Who won?"
             className="input input-bordered max-w-xs"
+            required
           />
           <input
+            ref={commander}
             type="text"
-            name="victor"
+            name="commander"
             placeholder="What Commander?"
             className="input input-bordered max-w-xs"
+            required
           />
-          <select className="select select-bordered w-full max-w-sm">
-            <option disabled selected>
+          <select
+            ref={colors}
+            name="colors"
+            className="select select-bordered w-full max-w-sm"
+            required
+          >
+            <option disabled defaultValue={"selected"}>
               What Colors?
             </option>
             <option>Red</option>
@@ -38,16 +67,20 @@ const Form = () => {
             <option>Rakdos</option>
           </select>
           <textarea
-            name="message"
+            ref={winCon}
+            name="winCon"
             placeholder="What was the win conditon?"
             rows="3"
             className="textarea textarea-bordered max-w-md"
+            required
           />
           <textarea
-            name="message"
+            ref={lessons}
+            name="lessons"
             placeholder="What did you learn?"
             rows="5"
             className="textarea textarea-bordered mb-5 max-w-md"
+            required
           />
           <button
             type="submit"
@@ -55,7 +88,7 @@ const Form = () => {
           >
             Add game
           </button>
-        </div>
+        </form>
       </div>
     </div>
   );

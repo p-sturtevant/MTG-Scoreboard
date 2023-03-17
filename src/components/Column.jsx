@@ -1,6 +1,6 @@
 import React from "react";
-import Name from "../Names/Names";
-import GameCardList from "../GameCardList/GameCardList";
+import Name from "./Names";
+import GameCardList from "./GameCardList";
 
 const Column = ({ player }) => {
   return (
